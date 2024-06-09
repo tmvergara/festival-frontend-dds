@@ -67,7 +67,7 @@ export default function Layout() {
                   >
                     <li>
                       <span className="justify-between font-bold">
-                        Administrador de Bonvino
+                        Administrador de Festivales
                       </span>
                     </li>
                     <li>
@@ -105,70 +105,72 @@ export default function Layout() {
                 </h1>
               </div>
               <ul className="menu bg-base-300 rounded-box">
-                <li>
+                <li className="mb-1">
                   <NavLink to={"/"}>
                     <p>Home</p>
                   </NavLink>
                 </li>
-                <li>
+                <li className="mb-1">
                   <details>
                     <summary>Artistas</summary>
                     <ul>
-                      <li>
-                        <a>Consultar Artistas</a>
+                      <li className="mb-1 mt-1">
+                        <NavLink to={"artistas/consultar"}>
+                          <a>Consultar Artistas</a>
+                        </NavLink>
                       </li>
-                      <li>
+                      <li className="mb-1">
                         <a>Agregar Artistas</a>
                       </li>
-                      <li>
+                      <li className="mb-1">
                         <a>Modificar Artistas</a>
                       </li>
                     </ul>
                   </details>
                 </li>
-                <li>
+                <li className="mb-1">
                   <details>
                     <summary>Sponsors</summary>
                     <ul>
-                      <li>
+                      <li className="mb-1 mt-1">
                         <a>Consultar Sponsors</a>
                       </li>
-                      <li>
+                      <li className="mb-1">
                         <a>Agregar Sponsors</a>
                       </li>
-                      <li>
+                      <li className="mb-1">
                         <a>Modificar Sponsors</a>
                       </li>
                     </ul>
                   </details>
                 </li>
-                <li>
+                <li className="mb-1">
                   <details>
                     <summary>Stands</summary>
                     <ul>
-                      <li>
+                      <li className="mb-1 mt-1">
                         <a>Consultar Stands</a>
                       </li>
-                      <li>
+                      <li className="mb-1">
                         <a>Agregar Stands</a>
                       </li>
-                      <li>
+                      <li className="mb-1">
                         <a>Modificar Stands</a>
                       </li>
                     </ul>
                   </details>
                 </li>
-                <li>
+                <li className="mb-1">
                   <details>
                     <summary>Newsletter</summary>
                     <ul>
-                      <li>
+                      <li className="mb-1 mt-1">
                         <a>Consultar articulos</a>
                       </li>
-                      <li>
+                      <li className="mb-1">
                         <a>Agregar articulos</a>
                       </li>
-                      <li>
+                      <li className="mb-1">
                         <a>Modificar articulos</a>
                       </li>
                     </ul>
