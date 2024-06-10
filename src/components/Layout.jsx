@@ -165,7 +165,9 @@ export default function Layout() {
                     <summary>Newsletter</summary>
                     <ul>
                       <li className="mb-1 mt-1">
-                        <a>Consultar articulos</a>
+                        <NavLink to={"newsletter/articulos/consultar"}>
+                          <a>Consultar articulos</a>
+                        </NavLink>
                       </li>
                       <li className="mb-1">
                         <a>Agregar articulos</a>

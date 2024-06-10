@@ -2,6 +2,9 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./components/home/Home";
 import ConsultarArtistas from "./components/artistas/ConsultarArtistas";
+import ConsultarArticulosNewsletter from "./components/newsletter/ConsultarArticulosNewsletter";
+import DetalleArticulo from "./components/newsletter/DetalleArticulo";
+import RegistarArticulo from "./components/newsletter/RegistarArticulo";
 // import { Toaster } from "react-hot-toast";
 
 function App() {
@@ -18,8 +21,23 @@ function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
-            <Route path="artistas/consultar" element={<ConsultarArtistas />} />
-            <Route path="bodegas/actualizar-remoto-summary" element={""} />
+            <Route path="/artistas/consultar" element={<ConsultarArtistas />} />
+            <Route
+              path="/newsletter/articulos/consultar"
+              element={<ConsultarArticulosNewsletter />}
+            />
+            <Route
+              path="/newsletter/articulos/consultar/detalles/:id"
+              element={<DetalleArticulo />}
+            />
+            <Route
+              path="/newsletter/articulos/consultar/editar/:id"
+              element={<RegistarArticulo />}
+            />
+            <Route
+              path="/newsletter/articulos/consultar/registrar"
+              element={<RegistarArticulo />}
+            />
           </Route>
         </Routes>
       </BrowserRouter>
