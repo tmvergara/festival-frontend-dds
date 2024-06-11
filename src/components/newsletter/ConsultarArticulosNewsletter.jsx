@@ -66,7 +66,7 @@ const ConsultarArticulosNewsletter = () => {
               {/* row 1 */}
               {articulos &&
                 articulos.map((articulo) => (
-                  <tr className="hover">
+                  <tr className="hover" key={articulo.id}>
                     <th onClick={() => detalleArticulo(articulo)}>
                       {articulo.id}
                     </th>

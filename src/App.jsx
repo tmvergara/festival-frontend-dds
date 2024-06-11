@@ -35,7 +35,7 @@ function App() {
               element={<RegistarArticulo />}
             />
             <Route
-              path="/newsletter/articulos/consultar/registrar"
+              path="/newsletter/articulos/registrar"
               element={<RegistarArticulo />}
             />
           </Route>

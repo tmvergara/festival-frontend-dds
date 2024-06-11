@@ -22,10 +22,12 @@ async function buscarPorId(id) {
 async function activarDesactivar(item) {
   await axios.delete(urlResource + "/articulos-newsletter/" + item.id);
 }
+
 async function grabar(item) {
   if (!item.id) {
     await axios.post(urlResource + "/articulos-newsletter", item);
   } else {
+    console.log("Actaulziando: " + item);
     await axios.put(urlResource + "/articulos-newsletter/" + item.id, item);
   }
 }
