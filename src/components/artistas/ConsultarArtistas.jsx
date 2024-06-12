@@ -21,8 +21,8 @@ const ConsultarArtistas = () => {
   };
 
   useEffect(() => {
-    buscarGeneros,
-    buscarArtistas
+    buscarGeneros(),
+    buscarArtistas()
   }, []);
 
   async function activarDesactivar(artista) {
@@ -68,21 +68,10 @@ const ConsultarArtistas = () => {
                   <td>{artista.nombre}</td>
                   <td>{artista.oyentesMensuales}</td>
                   <td>{moment(artista.fechaOrigen).format("DD/MM/YYYY")}</td>
-                  <td>{artista.genero.nombre}</td>
+                  <td>{generos && generos.find(
+                    (gen) => gen.id == artista.generoId
+                  ).nombre}</td>
                   <td>{artista.activo ? "Activo" : "Cancelado"}</td>
-                  <td>
-                    <button onClick={activarDesactivar(artista)}>
-                      { artista.activo ? (
-                        <div className="badge badge-success badge-outline">
-                          Activo
-                        </div>
-                      ) : (
-                        <div className="badge badge-error badge-outline">
-                          No activo
-                        </div>
-                      ) }    
-                    </button>
-                  </td>
                   <td>
                       <button
                         onClick={() => editarArtista(artista)}
