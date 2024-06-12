@@ -206,6 +206,7 @@ const RegistarArticulo = () => {
             </div>
             <TipTap
               content={contenido}
+              error={errors?.contenido}
               onChange={(value) =>
                 setValue("contenido", value, {
                   shouldValidate: true,
@@ -213,6 +214,13 @@ const RegistarArticulo = () => {
                 })
               }
             />
+            <div className="label">
+              {errors?.contenido && (
+                <span className="label-text-alt text-red-600">
+                  {errors?.contenido?.message}
+                </span>
+              )}
+            </div>
 
             {articulo && (
               <div className="form-control">

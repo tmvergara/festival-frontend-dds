@@ -202,11 +202,15 @@ const extensions = [
   }),
 ];
 
-const TiptapEditor = ({ content, onChange }) => {
+const TiptapEditor = ({ content, onChange, error }) => {
   const handleUpdate = ({ editor }) => {
     const content = editor.getHTML();
     console.log("Contenido actualizado:", content);
-    onChange(content);
+    if (content == "<p></p>") {
+      onChange(null);
+    } else {
+      onChange(content);
+    }
   };
 
   const editor = useEditor({
@@ -222,7 +226,9 @@ const TiptapEditor = ({ content, onChange }) => {
   }, [content, editor]);
 
   return (
-    <div className="border p-3 rounded-xl my-2">
+    <div
+      className={`border p-3 rounded-xl my-2 ${error ? "border-red-500" : ""}`}
+    >
       <MenuBar editor={editor} />
       <div className="border p-4 rounded-xl">
         <EditorContent editor={editor} />
