@@ -120,7 +120,9 @@ export default function Layout() {
                         </NavLink>
                       </li>
                       <li className="mb-1">
-                        <a>Agregar Artistas</a>
+                        <NavLink to={"artistas/registrar"}>
+                          <a>Agregar Artistas</a>
+                        </NavLink>
                       </li>
                       <li className="mb-1">
                         <a>Modificar Artistas</a>
