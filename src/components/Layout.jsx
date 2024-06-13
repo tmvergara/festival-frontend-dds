@@ -124,9 +124,6 @@ export default function Layout() {
                           <a>Agregar Artistas</a>
                         </NavLink>
                       </li>
-                      <li className="mb-1">
-                        <a>Modificar Artistas</a>
-                      </li>
                     </ul>
                   </details>
                 </li>

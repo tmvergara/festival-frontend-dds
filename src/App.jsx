@@ -29,6 +29,10 @@ function App() {
               path="/artistas/registrar" 
               element={<RegistrarArtistas />} />
             <Route
+              path="/artistas/consultar/editar/:id"
+              element={<RegistrarArtistas />} 
+            />
+            <Route
               path="/newsletter/articulos/consultar"
               element={<ConsultarArticulosNewsletter />}
             />

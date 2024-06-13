@@ -6,7 +6,7 @@ import moment from "moment";
 import { useNavigate } from "react-router-dom";
 
 const ConsultarArtistas = () => {
-  const navigate = useNavigate;
+  const navigate = useNavigate();
   const [ artistas, setArtistas ] = useState(null);
   const [ generos, setGeneros ] = useState(null);
 
@@ -29,16 +29,16 @@ const ConsultarArtistas = () => {
     const resp = window.confirm(
       "Está seguro de que quiere " +
       (artista.activo ? "desactivar" : "activar" ) +
-      "el registro?"
+      " el registro?"
      );
      if (resp) {
       await artistasService.activarDesactivar(artista);
-      await buscar()
+      await buscarArtistas()
      };
   };
 
-  async function editarArtista(artista) {
-    navigate(`/artistas/consultar/editar/${item.id}`);
+  function editarArtista(artista) {
+    navigate(`/artistas/consultar/editar/${artista.idArtista}`);
   }
 
   return (

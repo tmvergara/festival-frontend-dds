@@ -43,19 +43,11 @@ const RegistrarArtistas = () => {
         setValue,
     } = useForm({ values: artista });
 
-    const contenido = watch("contenido");
-
     useEffect(() => {
         console.log(id);
         buscarArtista(id);
         buscarGeneros();
-        register("contenido", {
-            required: {
-              value: true,
-              message: "Contenido es requerido",
-            },
-          });
-    }, [contenido]);
+    }, []);
 
     return (
         <>

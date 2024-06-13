@@ -14,6 +14,9 @@ async function buscarGenero() {
 
 async function buscarPorId(id) {
     const resp = await axios.get(urlResource + '/artistas/' + id);
+    resp.data.fechaOrigen = moment(resp.data.fechaOrigen).format(
+        "YYYY-MM-DD"
+      );
     return resp.data
 };
 
