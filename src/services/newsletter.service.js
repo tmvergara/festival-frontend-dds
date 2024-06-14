@@ -13,7 +13,7 @@ async function buscarTipoArticulo() {
 
 async function buscarPorId(id) {
   const resp = await axios.get(urlResource + "/articulos-newsletter/" + id);
-  resp.data.fechaPublicacion = moment(resp.fechaPublicacion).format(
+  resp.data.fechaPublicacion = moment(resp.data.fechaPublicacion).format(
     "YYYY-MM-DD"
   );
   return resp.data;

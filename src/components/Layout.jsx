@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
+import Logo from "../assets/logo-v2.png";
 export default function Layout() {
   <li>
     <NavLink to="/">Home</NavLink>
@@ -98,11 +99,8 @@ export default function Layout() {
             ></label>
             <ul className="menu p-4 w-80 min-h-full bg-base-300 text-base-content">
               {/* Sidebar content here */}
-              <div className="inline-flex mb-6">
-                <img src={""} alt="" className="w-10" />
-                <h1 className="text-xl font-bold select-none mt-auto mb-auto ml-3">
-                  festival
-                </h1>
+              <div className="inline-flex">
+                <img src={Logo} alt="" className="w-20 ml-1 mb-1" />
               </div>
               <ul className="menu bg-base-300 rounded-box">
                 <li className="mb-1">
@@ -183,7 +181,7 @@ export default function Layout() {
                 role="alert"
               >
                 <div className="flex items-center mb-3">
-                  <span className="bg-orange-100 text-orange-800 text-sm font-semibold me-2 px-2.5 py-0.5 rounded-sm dark:bg-orange-200 dark:text-orange-900">
+                  <span className="bg-gray-900 text-white text-sm font-semibold me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-900 dark:whitee-900">
                     Beta
                   </span>
                 </div>
