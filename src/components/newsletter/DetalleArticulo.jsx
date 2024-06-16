@@ -48,7 +48,7 @@ const DetalleArticulo = () => {
             </ul>
             <h2 className="mb-5">Contenido del articulo</h2>
           </article>
-          <div className="mockup-browser border bg-base-300 w-2/6 ml-auto mr-auto">
+          <div className="mockup-browser border bg-base-300 w-full md:w-2/6 ml-auto mr-auto">
             <div className="mockup-browser-toolbar">
               <div className="input">https://festivally.com</div>
             </div>

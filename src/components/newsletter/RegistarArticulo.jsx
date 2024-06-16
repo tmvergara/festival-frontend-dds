@@ -68,11 +68,11 @@ const RegistarArticulo = () => {
         }
       >
         <div className="divider"></div>
-        <article class="prose text-black ml-auto mr-auto">
+        <article class="prose text-black ml-auto mr-auto w-full">
           <h4>Detalles del Articulo {id && " - Id:  " + id}</h4>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="flex flex-row space-x-4">
-              <div className="w-1/2">
+            <div className="md:flex md:flex-row md:space-x-4">
+              <div className="w-full md:w-1/2">
                 <label className="form-control w-full max-w-xs">
                   <div className="label">
                     <span className="label-text">Titulo del articulo</span>
@@ -144,7 +144,7 @@ const RegistarArticulo = () => {
                   </div>
                 </label>
               </div>
-              <div className="w-1/2">
+              <div className="w-full md:w-1/2">
                 <label className="form-control w-full max-w-xs">
                   <div className="label">
                     <span className="label-text">Tiempo de Lectura(min)</span>

@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import Logo from "../assets/logo-v2.png";
+import Logo from "../assets/favicon.svg";
 export default function Layout() {
   <li>
     <NavLink to="/">Home</NavLink>
@@ -100,7 +100,7 @@ export default function Layout() {
             <ul className="menu p-4 w-80 min-h-full bg-base-300 text-base-content">
               {/* Sidebar content here */}
               <div className="inline-flex">
-                <img src={Logo} alt="" className="w-20 ml-1 mb-1" />
+                <img src={Logo} alt="" className="w-14 ml-1 mb-1" />
               </div>
               <ul className="menu bg-base-300 rounded-box">
                 <li className="mb-1">

@@ -1,4 +1,4 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./components/home/Home";
 import ConsultarArtistas from "./components/artistas/ConsultarArtistas";
@@ -22,15 +22,11 @@ function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
-            <Route 
-              path="/artistas/consultar" 
-              element={<ConsultarArtistas />} />
-            <Route 
-              path="/artistas/registrar" 
-              element={<RegistrarArtistas />} />
+            <Route path="/artistas/consultar" element={<ConsultarArtistas />} />
+            <Route path="/artistas/registrar" element={<RegistrarArtistas />} />
             <Route
               path="/artistas/consultar/editar/:id"
-              element={<RegistrarArtistas />} 
+              element={<RegistrarArtistas />}
             />
             <Route
               path="/newsletter/articulos/consultar"
@@ -48,6 +44,7 @@ function App() {
               path="/newsletter/articulos/registrar"
               element={<RegistarArticulo />}
             />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -56,7 +56,7 @@ const ConsultarArticulosNewsletter = () => {
                 <th></th>
                 <th>Titulo</th>
                 <th>Tipo de Art.</th>
-                <th>Tiempo de Lectura</th>
+                <th>Tiempo Lec.</th>
                 <th>Fecha Publicacion</th>
                 <th>Activo/Cancelado</th>
                 <th>Acciones</th>
