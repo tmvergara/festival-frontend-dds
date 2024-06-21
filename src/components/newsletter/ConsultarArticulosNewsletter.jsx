@@ -70,7 +70,10 @@ const ConsultarArticulosNewsletter = () => {
                     <th onClick={() => detalleArticulo(articulo)}>
                       {articulo.id}
                     </th>
-                    <td onClick={() => detalleArticulo(articulo)}>
+                    <td
+                      onClick={() => detalleArticulo(articulo)}
+                      className="w-1/6"
+                    >
                       {articulo.titulo}
                     </td>
                     <td

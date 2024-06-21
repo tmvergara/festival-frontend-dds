@@ -1,6 +1,8 @@
 import axios from "axios";
 import moment from "moment";
+import toast from "react-hot-toast";
 const urlResource = "http://localhost:3000/api";
+
 async function buscar() {
   const resp = await axios.get(urlResource + "/articulos-newsletter");
   return resp.data;
@@ -20,15 +22,33 @@ async function buscarPorId(id) {
 }
 
 async function activarDesactivar(item) {
-  await axios.delete(urlResource + "/articulos-newsletter/" + item.id);
+  toast.promise(
+    axios.delete(urlResource + "/articulos-newsletter/" + item.id),
+    {
+      loading: "Actualizando...",
+      success: "Estado actualizado!",
+      error: "Se produjo un error.",
+    }
+  );
 }
 
 async function grabar(item) {
   if (!item.id) {
-    await axios.post(urlResource + "/articulos-newsletter", item);
+    toast.promise(axios.post(urlResource + "/articulos-newsletter", item), {
+      loading: "Creando...",
+      success: "Articulo creado!",
+      error: "Se produjo un error.",
+    });
   } else {
     console.log("Actaulziando: " + item);
-    await axios.put(urlResource + "/articulos-newsletter/" + item.id, item);
+    toast.promise(
+      axios.put(urlResource + "/articulos-newsletter/" + item.id, item),
+      {
+        loading: "Actualizando...",
+        success: "Articulo actualizado!",
+        error: "Se produjo un error.",
+      }
+    );
   }
 }
 export const newsletterServices = {

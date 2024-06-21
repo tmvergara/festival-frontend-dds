@@ -8,18 +8,18 @@ import RegistrarStands from "./components/stands/RegistrarStands";
 import ConsultarArticulosNewsletter from "./components/newsletter/ConsultarArticulosNewsletter";
 import DetalleArticulo from "./components/newsletter/DetalleArticulo";
 import RegistarArticulo from "./components/newsletter/RegistarArticulo";
-// import { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <div className="App">
-      {/* <Toaster
-        position="bottom-right"
+      <Toaster
+        position="top-center"
         reverseOrder={false}
         gutter={8}
         containerClassName=""
         containerStyle={{}}
-      /> */}
+      />
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
