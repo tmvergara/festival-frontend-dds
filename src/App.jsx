@@ -3,6 +3,8 @@ import Layout from "./components/Layout";
 import Home from "./components/home/Home";
 import ConsultarArtistas from "./components/artistas/ConsultarArtistas";
 import RegistrarArtistas from "./components/artistas/RegistrarArtistas";
+import ConsultarStands from "./components/stands/ConsultarStands";
+import RegistrarStands from "./components/stands/RegistrarStands";
 import ConsultarArticulosNewsletter from "./components/newsletter/ConsultarArticulosNewsletter";
 import DetalleArticulo from "./components/newsletter/DetalleArticulo";
 import RegistarArticulo from "./components/newsletter/RegistarArticulo";
@@ -27,6 +29,12 @@ function App() {
             <Route
               path="/artistas/consultar/editar/:id"
               element={<RegistrarArtistas />}
+            />
+            <Route path="/stands/consultar" element={<ConsultarStands />} />
+            <Route path="/stands/registrar" element={<RegistrarStands />} />
+            <Route
+              path="/stands/consultar/editar/:id"
+              element={<RegistrarStands />}
             />
             <Route
               path="/newsletter/articulos/consultar"

@@ -146,13 +146,16 @@ export default function Layout() {
                     <summary>Stands</summary>
                     <ul>
                       <li className="mb-1 mt-1">
-                        <a>Consultar Stands</a>
+
+                        <NavLink to={"/stands/consultar"}>
+                          <p>Consultar Stands</p>
+                        </NavLink>
                       </li>
                       <li className="mb-1">
-                        <a>Agregar Stands</a>
-                      </li>
-                      <li className="mb-1">
-                        <a>Modificar Stands</a>
+
+                        <NavLink to={"/stands/registrar"}>
+                          <p>Agregar Stands</p>
+                        </NavLink>
                       </li>
                     </ul>
                   </details>
