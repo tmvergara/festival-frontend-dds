@@ -130,13 +130,14 @@ export default function Layout() {
                     <summary>Sponsors</summary>
                     <ul>
                       <li className="mb-1 mt-1">
-                        <a>Consultar Sponsors</a>
+                        <NavLink to={"sponsors/consultar"}>
+                          <a>Consultar Sponsors</a>
+                        </NavLink>
                       </li>
                       <li className="mb-1">
-                        <a>Agregar Sponsors</a>
-                      </li>
-                      <li className="mb-1">
-                        <a>Modificar Sponsors</a>
+                        <NavLink to={"sponsors/registrar"}>
+                          <a>Agregar Sponsors</a>
+                        </NavLink>
                       </li>
                     </ul>
                   </details>

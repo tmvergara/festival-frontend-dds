@@ -8,6 +8,8 @@ import RegistrarStands from "./components/stands/RegistrarStands";
 import ConsultarArticulosNewsletter from "./components/newsletter/ConsultarArticulosNewsletter";
 import DetalleArticulo from "./components/newsletter/DetalleArticulo";
 import RegistarArticulo from "./components/newsletter/RegistarArticulo";
+import ConsultarSponsors from "./components/sponsors/ConsultarSponsors";
+import RegistrarSponsors from "./components/sponsors/RegistrarSponsors";
 import { Toaster } from "react-hot-toast";
 
 function App() {
@@ -30,6 +32,11 @@ function App() {
               path="/artistas/consultar/editar/:id"
               element={<RegistrarArtistas />}
             />
+
+            <Route path="/sponsors/consultar" element={<ConsultarSponsors />} />
+            <Route path="/sponsors/registrar" element={<RegistrarSponsors />} />
+            <Route path="/sponsors/consultar/editar/:id" element={<RegistrarSponsors />} />
+
             <Route path="/stands/consultar" element={<ConsultarStands />} />
             <Route path="/stands/registrar" element={<RegistrarStands />} />
             <Route
