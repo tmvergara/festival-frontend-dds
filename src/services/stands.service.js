@@ -1,5 +1,7 @@
 import axios from "axios";
 import moment from "moment";
+import toast from "react-hot-toast";
+
 const urlResource = "http://localhost:3000/api";
 
 async function buscar() {
@@ -21,16 +23,28 @@ async function buscarPorId(id) {
 };
 
 async function activarDesactivar(stand) {
-    await axios.delete(urlResource + '/stands/' + stand.id);
+    toast.promise(axios.delete(urlResource + '/stands/' + stand.id), {
+        loading: "Actualizando...",
+        success: "Estado actualizado!",
+        error: "Se produjo un error.",
+    });
 };
 
 async function grabar(stand) {
     console.log(stand);
     if (!stand.id) {
-        await axios.post(urlResource + '/stands', stand);
+        toast.promise(axios.post(urlResource + '/stands', stand), {
+            loading: "Actualizando...",
+            success: "Estado actualizado!",
+            error: "Se produjo un error.",
+        });
     }
     else {
-        await axios.put(urlResource + '/stands/' + stand.id, stand)
+        toast.promise(axios.put(urlResource + '/stands/' + stand.id, stand), {
+            loading: "Actualizando...",
+            success: "Estado actualizado!",
+            error: "Se produjo un error.",
+        });
     }
 };
 

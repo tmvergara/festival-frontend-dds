@@ -13,7 +13,7 @@ const RegistrarStands = () => {
 
     async function buscarStand(id) {
         if (id) {
-            const stand = await standsService.buscarStand(id);
+            const stand = await standsService.buscarPorId(id);
             setStand(stand);
         }
     }
