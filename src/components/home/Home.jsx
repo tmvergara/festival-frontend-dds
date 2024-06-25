@@ -8,15 +8,15 @@ function Home() {
       <Breadcrumbs />
       <FormCard>
         <article className="prose ml-auto mr-auto">
-          <h1>Bienvendio a Festivally!</h1>
+          <h1>Bienvenido a Festivally!</h1>
           <p>
             A continaucion presentamos nuestra implementacion de una pequeña app
             web que permite gestionar los artistas, sponsors, stands y la
             newsletter para festivales de musica.
             <h4>Integrantes del Grupo</h4>
             <ul>
-              <li>Dalmagro Lucas - (seccion stands)</li>
-              <li>Sacco Rey Juan - (seccion sponsors)</li>
+              <li>Dalmagro Lucas - 94366 (seccion stands)</li>
+              <li>Sacco Rey Juan - 89319 (seccion sponsors)</li>
               <li>Vergara Tomas Ignacio - 94197 (seccion newsletter)</li>
               <li>Yorlano Pedro - 95197 (seccion artistas)</li>
             </ul>
