@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { newsletterServices } from "../../services/newsletter.service";
 import moment from "moment";
 import { useNavigate } from "react-router-dom";
+import { useModal } from "../../hooks/useModal";
 
 const ConsultarArticulosNewsletter = () => {
   const navigate = useNavigate();
@@ -14,6 +15,7 @@ const ConsultarArticulosNewsletter = () => {
     let data = await newsletterServices.buscarTipoArticulo();
     setTipoArticulos(data);
   }
+
   async function buscarArticulos() {
     let data = await newsletterServices.buscar();
     setArticulos(data);
@@ -24,18 +26,6 @@ const ConsultarArticulosNewsletter = () => {
     buscarTipoArticulos();
   }, []);
 
-  async function ActivarDesactivar(item) {
-    const resp = window.confirm(
-      "Está seguro que quiere " +
-        (item.activo ? "desactivar" : "activar") +
-        " el registro?"
-    );
-    if (resp) {
-      await newsletterServices.activarDesactivar(item);
-      await buscarArticulos();
-    }
-  }
-
   function detalleArticulo(item) {
     navigate(`/newsletter/articulos/consultar/detalles/${item.id}`);
   }
@@ -44,9 +34,33 @@ const ConsultarArticulosNewsletter = () => {
     navigate(`/newsletter/articulos/consultar/editar/${item.id}`);
   }
 
+  async function ActivarDesactivar(item) {
+    const result = await openModal();
+    if (result) {
+      console.log("El usuario aceptó");
+      await newsletterServices.activarDesactivar(item);
+      await buscarArticulos();
+    } else {
+      console.log("El usuario canceló");
+    }
+  }
+
+  const { openModal, modal } = useModal({
+    children: (
+      <div>
+        <h2 className="text-2xl font-bold mb-1">Atencion!</h2>
+        <p>¿Estás seguro de que deseas modificar el estado de este articulo?</p>
+      </div>
+    ),
+    modalBoxClassName: "custom-modal-class",
+    onModalClose: () => console.log("Modal cerrado"),
+    onModalOpen: () => console.log("Modal abierto"),
+  });
+
   return (
     <>
       <Breadcrumbs />
+      {modal} {/*.  <---- rendering the modal component*/}
       <FormCard title={"Consultar Articulos"}>
         <div className="overflow-x-auto">
           <table className="table">
